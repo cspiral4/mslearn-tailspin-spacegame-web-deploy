@@ -105,7 +105,10 @@ namespace UITests
             }
 
             // Locate the link by its ID and then click the link.
-            ClickElement(FindElement(By.Id(linkId)));
+            if ((FindElement(By.Id(linkId))) != null)
+            {
+                ClickElement(FindElement(By.Id(linkId)));
+            }
 
             // Locate the resulting modal.
             IWebElement modal = FindElement(By.Id(modalId));
